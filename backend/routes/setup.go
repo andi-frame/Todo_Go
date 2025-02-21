@@ -1,12 +1,8 @@
 package routes
 
-import (
-	"github.com/gin-gonic/gin"
-)
+import "github.com/gin-gonic/gin"
 
-func Setup() {
-	r := gin.Default()
-
+func Setup(r *gin.Engine) {
 	r.GET("/health-check", HealthCheck)
-	r.Run(":8080")
+	TodoRoutes(r)
 }
